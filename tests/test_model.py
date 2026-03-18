@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from geo_nmf import GeoNMF
+from geom_nmf import GeoNMF
 
 
 @pytest.fixture

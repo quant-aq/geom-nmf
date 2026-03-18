@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from geo_nmf import GeoNMF
-from geo_nmf import viz
+from geom_nmf import GeoNMF
+from geom_nmf import viz
 
 
 @pytest.fixture
