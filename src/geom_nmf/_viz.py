@@ -6,8 +6,8 @@ def plot_components(model, feature_names=None, ax=None):
 
     Parameters
     ----------
-    model : GeoNMF
-        A fitted GeoNMF instance.
+    model : GeomNMF
+        A fitted GeomNMF instance.
     feature_names : list of str, optional
         Names for each feature/column.
     ax : matplotlib.axes.Axes, optional
@@ -25,8 +25,8 @@ def plot_reconstruction_error(model, ax=None):
 
     Parameters
     ----------
-    model : GeoNMF
-        A fitted GeoNMF instance.
+    model : GeomNMF
+        A fitted GeomNMF instance.
     ax : matplotlib.axes.Axes, optional
         Axes to plot on. Creates a new figure if not provided.
 
@@ -42,8 +42,8 @@ def plot_spatial_map(model, coords, component=0, ax=None):
 
     Parameters
     ----------
-    model : GeoNMF
-        A fitted GeoNMF instance.
+    model : GeomNMF
+        A fitted GeomNMF instance.
     coords : array-like of shape (n_samples, 2)
         Longitude/latitude coordinates for each sample.
     component : int, default=0

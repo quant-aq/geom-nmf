@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from geom_nmf import GeoNMF
+from geom_nmf import GeomNMF
 from geom_nmf import viz
 
 
@@ -9,7 +9,7 @@ def fitted_model():
     rng = np.random.default_rng(42)
     X = rng.random((100, 10))
     y = rng.random(100)
-    return GeoNMF().fit(X, y)
+    return GeomNMF().fit(X, y)
 
 
 @pytest.fixture
