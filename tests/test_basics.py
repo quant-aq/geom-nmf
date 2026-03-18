@@ -1,4 +1,4 @@
-from python_package_template import __version__
+from geo_nmf import __version__
 
 
 def test_version():
