@@ -7,7 +7,6 @@ Coming soon!
 
 # Getting Started
 
-
 ## Installation
 
 Install the latest version directly from GitHub:
@@ -28,11 +27,26 @@ Install from a specific tag:
 pip install git+https://github.com/quant-aq/geo-nmf.git@<tag>
 ```
 
-## Contributing / Development Setup
+## Contributing
 
-This project uses [Poetry](https://python-poetry.org/) to manage dependencies and virtual environments. Follow the steps below to get your local development environment set up.
+We welcome contributions! If you'd like to fix a bug, add a feature, or improve documentation, follow the steps below. Don't worry if you're new to this — it's a straightforward process once you've done it a couple of times.
 
-### 1. Install Poetry
+This project uses [Poetry](https://python-poetry.org/) to manage dependencies and virtual environments.
+
+### 1. Fork the repository
+
+A "fork" is your own personal copy of the project on GitHub. To create one, click the **Fork** button in the top-right corner of the [geo-nmf repository](https://github.com/quant-aq/geo-nmf) page.
+
+### 2. Clone your fork
+
+Download your fork to your local machine:
+
+```sh
+git clone https://github.com/<your-github-username>/geo-nmf.git
+cd geo-nmf
+```
+
+### 3. Install Poetry
 
 If you don't already have Poetry installed, choose the instructions for your operating system below.
 
@@ -64,14 +78,7 @@ Then follow any instructions it prints to add Poetry to your `PATH`.
 poetry --version
 ```
 
-### 2. Clone the repository
-
-```sh
-git clone https://github.com/quant-aq/geo-nmf.git
-cd geo-nmf
-```
-
-### 3. Install dependencies
+### 4. Install dependencies
 
 This installs both the main dependencies and the development dependencies (e.g. pytest, sphinx) into an isolated virtual environment managed by Poetry:
 
@@ -87,63 +94,45 @@ poetry install --with coverage
 
 You only need to run this once (and again whenever dependencies change).
 
-### 4. Activate the virtual environment
-
-Poetry creates and manages a virtual environment for you. To start a shell inside it:
+To activate the virtual environment:
 
 ```sh
 poetry shell
 ```
 
-Your prompt will change to indicate you're inside the environment. Any commands you run (like `pytest` or `python`) will use the project's isolated dependencies, not your system Python.
-
-To exit the environment when you're done:
+Your prompt will change to indicate you're inside the environment. To exit when you're done:
 
 ```sh
 exit
 ```
 
-Alternatively, you can run a single command inside the environment without activating it, using `poetry run`:
+Alternatively, prefix any command with `poetry run` to run it inside the environment without activating it:
 
 ```sh
 poetry run pytest tests/
 ```
 
-### 5. Adding dependencies
+### 5. Create a branch
 
-To add a new dependency:
+Never make changes directly on `main`. Instead, create a new branch with a short descriptive name:
 
 ```sh
-# Runtime dependency
-poetry add <package>
-
-# Development-only dependency
-poetry add --group dev <package>
+git checkout -b my-feature-branch
 ```
 
-### 6. Verify everything is working
+### 6. Make your changes
 
-Run the test suite to confirm your setup is correct:
+Edit files, write code, fix bugs — whatever your contribution involves. Keep your changes focused on one thing per branch.
+
+### 7. Run the tests
+
+Before submitting, make sure all tests pass:
 
 ```sh
 poetry run pytest tests/
 ```
 
-All tests should pass before you start making changes.
-
-## Building Documentation
-
-Instructions will eventually go here...
-
-## Running Tests
-
-Tests are built and run using [pytest](https://docs.pytest.org/en/7.1.x/). Test files should be named with the `test_` prefix (e.g. `test_basics.py`) and located in the `tests/` directory.
-
-Run all tests:
-
-```sh
-pytest tests/
-```
+If you've added new functionality, add a corresponding test in the `tests/` directory.
 
 Common flags:
 
@@ -172,5 +161,34 @@ pytest -v -k "test_fit" tests/
 # Run with coverage report
 pytest --cov=geo_nmf --cov-report=term-missing tests/
 ```
+
+### 8. Commit and push your changes
+
+Stage and commit your changes with a clear message describing what you did:
+
+```sh
+git add <file(s) you changed>
+git commit -m "Brief description of your change"
+git push origin my-feature-branch
+```
+
+### 9. Open a Pull Request
+
+Go to your fork on GitHub. You should see a prompt to open a Pull Request — click it. Fill in a short description of what your changes do and why. A maintainer will review your PR and may leave comments or request changes before merging.
+
+### Tips
+
+- Keep pull requests small and focused — one feature or fix per PR is much easier to review
+- Check that your branch is up to date with `main` before opening a PR:
+  ```sh
+  git fetch origin
+  git rebase origin/main
+  ```
+- To add a new dependency: `poetry add <package>` (or `poetry add --group dev <package>` for dev-only)
+- If you're unsure about a change, open an issue first to discuss it before writing code
+
+## Building Documentation
+
+Instructions will eventually go here...
 
 &copy; 2026, QuantAQ, Inc. All rights reserved.
