@@ -3,7 +3,7 @@ from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 
 
-class GeoNMF(BaseEstimator, RegressorMixin):
+class GeomNMF(BaseEstimator, RegressorMixin):
     """Geospatial Non-negative Matrix Factorization regressor.
 
     Parameters
@@ -36,7 +36,7 @@ class GeoNMF(BaseEstimator, RegressorMixin):
 
         Returns
         -------
-        self : GeoNMF
+        self : GeomNMF
             Fitted estimator.
         """
         X, y = check_X_y(X, y)

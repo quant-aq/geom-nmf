@@ -1,6 +1,6 @@
-# geo-nmf
+# geom-nmf
 
-![Tests](https://github.com/quant-aq/geo-nmf/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/quant-aq/geom-nmf/actions/workflows/tests.yml/badge.svg)
 ![Python Versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)
 
 Coming soon!
@@ -12,19 +12,19 @@ Coming soon!
 Install the latest version directly from GitHub:
 
 ```sh
-pip install git+https://github.com/quant-aq/geo-nmf.git
+pip install git+https://github.com/quant-aq/geom-nmf.git
 ```
 
 Install from a specific branch:
 
 ```sh
-pip install git+https://github.com/quant-aq/geo-nmf.git@<branch-name>
+pip install git+https://github.com/quant-aq/geom-nmf.git@<branch-name>
 ```
 
 Install from a specific tag:
 
 ```sh
-pip install git+https://github.com/quant-aq/geo-nmf.git@<tag>
+pip install git+https://github.com/quant-aq/geom-nmf.git@<tag>
 ```
 
 ## Contributing
@@ -35,15 +35,15 @@ This project uses [Poetry](https://python-poetry.org/) to manage dependencies an
 
 ### 1. Fork the repository
 
-A "fork" is your own personal copy of the project on GitHub. To create one, click the **Fork** button in the top-right corner of the [geo-nmf repository](https://github.com/quant-aq/geo-nmf) page.
+A "fork" is your own personal copy of the project on GitHub. To create one, click the **Fork** button in the top-right corner of the [geom-nmf repository](https://github.com/quant-aq/geom-nmf) page.
 
 ### 2. Clone your fork
 
 Download your fork to your local machine:
 
 ```sh
-git clone https://github.com/<your-github-username>/geo-nmf.git
-cd geo-nmf
+git clone https://github.com/<your-github-username>/geom-nmf.git
+cd geom-nmf
 ```
 
 ### 3. Install Poetry
@@ -144,7 +144,7 @@ Common flags:
 | `-s` | Disable output capture — allows `print()` statements to show in terminal |
 | `-k "expression"` | Run only tests whose names match the expression (e.g. `-k "test_fit"`) |
 | `--tb=short` | Show a shortened traceback on failures (`short`, `long`, `no`, `line`) |
-| `--cov=geo_nmf` | Report test coverage for the package (requires `pytest-cov`) |
+| `--cov=geom_nmf` | Report test coverage for the package (requires `pytest-cov`) |
 
 Examples:
 
@@ -159,7 +159,7 @@ pytest -x --tb=long tests/
 pytest -v -k "test_fit" tests/
 
 # Run with coverage report
-pytest --cov=geo_nmf --cov-report=term-missing tests/
+pytest --cov=geom_nmf --cov-report=term-missing tests/
 ```
 
 ### 8. Commit and push your changes
