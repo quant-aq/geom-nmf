@@ -81,7 +81,8 @@ def GeomNMF(
         * ``"exact"`` – convex-hull vertices via QHull (exact but may be
           slow in high intrinsic dimension).
         * ``"random"`` – random projection extremes (fast approximation;
-          controlled by *n_directions*, *n_top*, *n_candidates*).
+          controlled by *n_directions*, *n_top*, *n_candidates*). When n >> J, 
+          this can be slower than ``"exact"``.
 
         Default ``"exact"``.
     n_directions : int, optional
@@ -98,7 +99,7 @@ def GeomNMF(
         cluster before the exhaustive volume search.  Useful when the
         candidate pool is large.  Default False.
     n_clusters : int or None, optional
-        Number of clusters when *prune=True*.  Defaults to ``10*K``.
+        Minimum number of clusters when *prune=True*.  Defaults to ``10*K``.
     refine_greedy : bool, optional
         If True, run one pass of N-FINDR greedy swaps on the initial
         solution to try to improve the simplex volume.  Only meaningful when

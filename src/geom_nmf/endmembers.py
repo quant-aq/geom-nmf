@@ -143,15 +143,15 @@ def prune_close_points(
  
     The number of clusters is chosen automatically by maximizing the
     silhouette score over the range
-    ``[max(2, n_clusters // 2), min(2 * n_clusters, m - 1)]``,
-    centered around *n_clusters*.
+    ``[max(2, n_clusters), min(2 * n_clusters, m - 1)]``,
+    with *n_clusters* as the lower bound.
  
     Parameters
     ----------
     points : np.ndarray, shape (m, J)
         Points to prune.  Must be finite (no NaN or Inf).
     n_clusters : int, optional
-        Target number of representatives (clusters) to retain after pruning.  The
+        Minimum number of representatives (clusters) to retain after pruning.  The
         silhouette search explores a range around this value, so the actual
         number returned may differ slightly.  Default 25.
     seed : int, optional
@@ -179,7 +179,7 @@ def prune_close_points(
     except ImportError:
         return X, list(range(m))
  
-    lower = max(2, n_clusters // 2)
+    lower = max(2, n_clusters)
     upper = min(2 * n_clusters, m - 1)
  
     if lower > upper:
