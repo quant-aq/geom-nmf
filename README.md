@@ -99,6 +99,11 @@ To activate the virtual environment:
 ```sh
 poetry shell
 ```
+or 
+
+```sh
+poetry env activate
+```
 
 Your prompt will change to indicate you're inside the environment. To exit when you're done:
 
