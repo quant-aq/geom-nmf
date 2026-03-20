@@ -99,7 +99,9 @@ def GeomNMF(
         cluster before the exhaustive volume search.  Useful when the
         candidate pool is large.  Default False.
     n_clusters : int or None, optional
-        Minimum number of clusters when *prune=True*.  Defaults to ``10*K``.
+        Target minimum number of clusters when *prune=True*.  The actual number
+        returned may be lower if empty clusters reduce the count.  
+        Defaults to ``10*K``.
     refine_greedy : bool, optional
         If True, run one pass of N-FINDR greedy swaps on the initial
         solution to try to improve the simplex volume.  Only meaningful when

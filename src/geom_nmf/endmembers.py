@@ -143,7 +143,7 @@ def prune_close_points(
  
     The number of clusters is chosen automatically by maximizing the
     silhouette score over the range
-    ``[max(2, n_clusters), min(2 * n_clusters, m - 1)]``,
+    ``[max(2, n_clusters), min(int(1.5 * n_clusters), m - 1)]``,
     with *n_clusters* as the lower bound.
  
     Parameters
@@ -151,9 +151,9 @@ def prune_close_points(
     points : np.ndarray, shape (m, J)
         Points to prune.  Must be finite (no NaN or Inf).
     n_clusters : int, optional
-        Minimum number of representatives (clusters) to retain after pruning.  The
-        silhouette search explores a range around this value, so the actual
-        number returned may differ slightly.  Default 25.
+        Target minimum number of representatives to retain after pruning.
+        The silhouette search starts at this value, but the actual number
+        returned may be lower if empty clusters reduce the count.  Default 25.
     seed : int, optional
         Random seed passed to MiniBatchKMeans.  Default 123.
  
@@ -180,7 +180,7 @@ def prune_close_points(
         return X, list(range(m))
  
     lower = max(2, n_clusters)
-    upper = min(2 * n_clusters, m - 1)
+    upper = min(int(1.5 * n_clusters), m - 1)
  
     if lower > upper:
         return X, list(range(m))
