@@ -7,7 +7,7 @@ documented modifications.
 Reference
 ---------
 Winter, M. E. (1999). N-FINDR: An algorithm for fast autonomous spectral
-end-member determination in hyperspectral data.  *Proc. SPIE 3753*.
+end-member determination in hyperspectral data. 
 """
 
 import math
