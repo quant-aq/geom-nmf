@@ -205,7 +205,7 @@ def nfindr(
     -----
     Deviations from Winter (1999):
 
-    * Defaults to ATGP initialization (Plaza et al., 2002) instead of
+    * Defaults to ATGP initialization (Plaza and Chang, 2006) instead of
       random; pass ``init="random"`` to recover the original behavior.
     * Optional L2 row-normalization before PCA (``normalize=True`` by
       default); Winter (1999) does not normalize.
